@@ -1,0 +1,19 @@
+
+  
+  .navbar-brand {
+    font-family: 'Cinzel Decorative', serif; /* خط مزخرف */
+    font-style: italic; /* خط مائل */
+    color: transparent; /* يجعل النص شفافًا */
+    -webkit-text-stroke: 1px #c7ad1b; /* يضيف حدودًا ذهبية للنص */
+    font-size:xx-large;
+    margin-left: 5px; 
+  }
+  
+  .navbar .navbar-nav .nav-link {
+    color:  #c7ad1b !important;
+  }
+  .nav-link.active {
+    color: #a28c12; /* لون النص الذهبي */
+    font-weight: bold;
+  }
+  

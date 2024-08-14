@@ -1,0 +1,31 @@
+.footer {
+    background-color: #f8f9fa;
+    color: #343a40;
+    border-top: 3px solid #c7ad1b;
+}
+
+.footer h5 {
+    color: #c7ad1b;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a {
+    color: #343a40;
+}
+
+.footer-link:hover {
+    color: #c7ad1b;
+    text-decoration: none;
+}
+
+.text-md-end {
+    text-align: right !important;
+    margin-left: 240px;
+}
+
+
+
+.footer .row:last-child {
+    margin-bottom: 0;
+}

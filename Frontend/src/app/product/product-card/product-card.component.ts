@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'app-product-card',
@@ -6,11 +6,6 @@ import { Component } from "@angular/core";
     styleUrls: ['product-card.component.css']
 })
 export class ProductCardComponent{
-product : any = {
-"Id":1,
-"brand":"KIKO MILANO",
-"description":"3D Hydra Lip Gloss 020",
-"price":"SAR " + 33.00 
-}
+@Input() product : any 
 
 }
