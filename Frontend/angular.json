@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-          
+
             "outputPath": "dist/glow-girl",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -33,18 +33,19 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/assets",
+              "src/Data",
               {
 
-             
+
                 "glob": "**/*",
                 "input": "public"
-                 
+
               }
             ],
             "styles": [
                 "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
-             
+
             ],
             "scripts": []
           },
@@ -97,20 +98,20 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/assets",
-              "src/data",
-            
+              "src/Data",
+
               {
 
-             
+
                 "glob": "**/*",
                 "input": "public"
-                 
+
               }
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
-              
+
             ],
             "scripts": []
           }

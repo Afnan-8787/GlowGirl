@@ -1,37 +1,51 @@
+
 [{
     "Id":1,
+    "makeupORskincare":1,
     "brand":"KIKO MILANO",
     "description":"3D Hydra Lip Gloss 020",
-    "price":"SAR 33.00 " 
+    "price":"SAR 63.00 ",
+     "image" :"kiko3"
     },
     {
       "Id":2,
-      "brand":"KIKO ",
-      "description":"3D Hydra Lip Gloss 020",
-      "price":"SAR 33.00 " 
+      "makeupORskincare":1,
+      "brand":"TARTE ",
+      "description":"Maracuja Juicy Plumping Lip Oil",
+      "price":"SAR 130.00 ",
+      "image" :"pro2"
       },
       {
         "Id":3,
-        "brand":" MILANO",
-        "description":"3D Hydra Lip Gloss 020",
-        "price":"SAR 33.00 "
+        "makeupORskincare":1,
+        "brand":"HUDA BEAUTY",
+        "description":"Blush Filter - Liquid Blush",
+        "price":"SAR 133.00 ",
+         "image" :"pro3"
         },
         {
           "Id":4,
-          "brand":"KIKO MILANO",
-          "description":"3D Hydra Lip Gloss 020",
-          "price":"SAR 33.00 " 
+          "makeupORskincare":2,
+          "brand":"LANEIGE",
+          "description":"Lip Sleeping Mask",
+          "price":"SAR 135.00 ",
+          "image" :"pro4"
+
           },
           {
             "Id":5,
-            "brand":"KIKO MILANO",
-            "description":"3D Hydra Lip Gloss 020",
-            "price":"SAR 33.00  "
+            "makeupORskincare":2,
+            "brand":"PIXI",
+            "description":"Antioxidant Tonic",
+            "price":"SAR 55.00",
+            "image" :"pro5"
             },
             {
               "Id":6,
-              "brand":"KIKO MILANO",
-              "description":"3D Hydra Lip Gloss 020",
-              "price":"SAR 33.00 "  
+              "makeupORskincare":2,
+              "brand":"THE ORDINARY",
+              "description":"AHA 30% + BHA 2% Peeling Solution",
+              "price":"SAR 50.00 ",
+              "image" :"pro6"
               }
   ]

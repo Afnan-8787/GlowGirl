@@ -1,52 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GlowGirlService } from '../../services/glow-girl.service';
+import { IProduct } from '../IProduct.interface';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+  styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-  products : Array <any> = [{
-    "Id":1,
-    "makeup-OR-skincare":1,
-    "brand":"KIKO MILANO",
-    "description":"3D Hydra Lip Gloss 020",
-    "price":"SAR " + 33.00 
-    },
-    {
-      "Id":2,
-      "makeup-OR-skincare":1,
-      "brand":"KIKO ",
-      "description":"3D Hydra Lip Gloss 020",
-      "price":"SAR " + 33.00 
-      },
-      {
-        "Id":3,
-        "makeup-OR-skincare":1,
-        "brand":" MILANO",
-        "description":"3D Hydra Lip Gloss 020",
-        "price":"SAR " + 33.00 
+export class ProductListComponent implements OnInit {
+  makeupORskincare = 3;
+  products!: IProduct[];
+
+  constructor(private route: ActivatedRoute, private glowGirlService: GlowGirlService) { }
+
+  ngOnInit(): void {
+    this.route.url.subscribe(urlSegments => {
+      const currentRoute = urlSegments.map(segment => segment.path).join('/');
+
+      if (currentRoute === 'makeUp-products') {
+        this.makeupORskincare = 1;
+      } else if (currentRoute === 'skinCare-products') {
+        this.makeupORskincare = 2;
+      } else {
+        this.makeupORskincare = 3;
+      }
+
+      this.loadProducts();
+    });
+  }
+
+  private loadProducts(): void {
+    if (this.makeupORskincare === 3) {
+      this.glowGirlService.getAllProduct().subscribe(
+        data => {
+          this.products = data;
+          console.log('All products:', data);
         },
-        {
-          "Id":4,
-          "makeup-OR-skincare":2,
-          "brand":"KIKO MILANO",
-          "description":"3D Hydra Lip Gloss 020",
-          "price":"SAR " + 33.00 
-          },
-          {
-            "Id":5,
-            "makeup-OR-skincare":2,
-            "brand":"KIKO MILANO",
-            "description":"3D Hydra Lip Gloss 020",
-            "price":"SAR " + 33.00 
-            },
-            {
-              "Id":6,
-              "makeup-OR-skincare":2,
-              "brand":"KIKO MILANO",
-              "description":"3D Hydra Lip Gloss 020",
-              "price":"SAR " + 33.00 
-              },
-  ]
+        error => console.log('Error loading all products:', error)
+      );
+    } else {
+      this.glowGirlService.getProduct(this.makeupORskincare).subscribe(
+        data => {
+          this.products = data;
+          console.log('Filtered products:', data);
+        },
+        error => console.log('Error loading filtered products:', error)
+      );
+    }
+  }
 }
+
